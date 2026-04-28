@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I'm Sorry ❤️</title>
+<title>Aku Minta Maaf ❤️</title>
 
 <style>
 *{
@@ -97,11 +97,6 @@ box-shadow:0 0 20px #ff2e7a;
 100%{transform:scale(1);}
 }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
 .float{
 position:absolute;
 font-size:22px;
@@ -154,7 +149,7 @@ to{opacity:1;transform:scale(1);}
 
 <div id="text"></div>
 
-<button id="nextBtn" onclick="finalPage()">One More Thing</button>
+<button id="nextBtn" onclick="finalPage()">Satu Lagi</button>
 
 <div id="final"></div>
 
@@ -164,31 +159,31 @@ to{opacity:1;transform:scale(1);}
 
 let message = `Senja ❤️
 
-I wanted to say this properly.
+Aku ingin mengatakan ini dengan benar.
 
-I really loved you.
-Whatever I felt for you was real, not fake, not timepass.
+Aku benar-benar mencintaimu.
+Apa yang aku rasakan untukmu itu nyata, bukan palsu, bukan main-main.
 
-I never hated Muslims, and I never hated you.
-Please believe that.
+Aku tidak pernah membenci Muslim, dan aku juga tidak pernah membencimu.
+Tolong percayalah.
 
-The problem was never religion itself.
-It was fear, pain, and old wounds inside my family because of their past experiences.
+Masalahnya bukan tentang agama.
+Masalahnya adalah rasa takut, rasa sakit, dan luka lama dalam keluargaku karena masa lalu mereka.
 
-Their mindset was not open, and I got stuck between what I felt for you and what I come from.
+Pikiran keluarga ku tidak terlalu terbuka, dan aku terjebak di antara perasaanku padamu dan latar belakang keluargaku.
 
-Maybe I handled everything badly.
-Maybe I hurt you more than I understood at that time.
+Mungkin aku menangani semuanya dengan buruk.
+Mungkin aku menyakitimu lebih dari yang aku sadari saat itu.
 
-For that... I am truly sorry.
+Untuk itu... aku sungguh minta maaf.
 
-You were good to me.
-You deserved clarity, respect, and peace.
+Kamu baik kepadaku.
+Kamu pantas mendapatkan kejelasan, rasa hormat, dan ketenangan.
 
-No matter what happens now,
-I genuinely wish happiness, love, and success for you.
+Apa pun yang terjadi sekarang,
+aku sungguh berharap kamu mendapatkan kebahagiaan, cinta, dan kesuksesan.
 
-And a part of me will always be thankful that I met you. ❤️`;
+Dan sebagian dari diriku akan selalu bersyukur karena pernah mengenalmu. ❤️`;
 
 let i = 0;
 
@@ -215,9 +210,9 @@ document.getElementById("text").style.display="none";
 document.getElementById("nextBtn").style.display="none";
 document.getElementById("final").style.display="block";
 document.getElementById("final").innerHTML =
-`❤️ I'm Sorry, Senja ❤️<br><br>
-If I embarrassed you, confused you, or hurt your heart... I am sorry.<br><br>
-You mattered to me more than I knew how to express.`;
+`❤️ Maaf, Senja ❤️<br><br>
+Jika aku membuatmu malu, bingung, atau menyakiti hatimu... aku minta maaf.<br><br>
+Kamu sangat berarti bagiku lebih dari yang bisa aku ungkapkan.`;
 burst();
 }
 
