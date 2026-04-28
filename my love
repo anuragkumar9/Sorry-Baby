@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(-45deg,#000000,#1a0010,#33001a,#120012);
+background-size:400% 400%;
+animation:bgMove 10s ease infinite;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+overflow:hidden;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+max-width:700px;
+width:100%;
+padding:30px;
+background:rgba(255,255,255,0.08);
+border-radius:25px;
+backdrop-filter:blur(12px);
+box-shadow:0 0 35px rgba(255,0,120,0.18);
+z-index:2;
+animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+#heart{
+font-size:120px;
+cursor:pointer;
+animation:beatGlow 1s infinite;
+filter:drop-shadow(0 0 18px #ff2e7a);
+}
+
+@keyframes beatGlow{
+0%{transform:scale(1);}
+50%{transform:scale(1.18);}
+100%{transform:scale(1);}
+}
+
+#text{
+display:none;
+font-size:22px;
+line-height:1.7;
+white-space:pre-line;
+min-height:320px;
+animation:fadeIn 1s ease;
+}
+
+#nextBtn{
+display:none;
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:12px;
+font-size:18px;
+background:#ff2e7a;
+color:white;
+cursor:pointer;
+transition:0.3s;
+animation:pulseBtn 1.5s infinite;
+}
+
+#nextBtn:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px #ff2e7a;
+}
+
+@keyframes pulseBtn{
+0%{transform:scale(1);}
+50%{transform:scale(1.06);}
+100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.float{
+position:absolute;
+font-size:22px;
+animation:rise 6s linear forwards;
+opacity:0.8;
+pointer-events:none;
+}
+
+@keyframes rise{
+0%{transform:translateY(0) scale(0.4) rotate(0deg);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-110vh) scale(1.5) rotate(360deg);opacity:0;}
+}
+
+.spark{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+background:white;
+animation:sparkle 2s linear forwards;
+pointer-events:none;
+}
+
+@keyframes sparkle{
+0%{transform:scale(0);opacity:1;}
+100%{transform:translateY(-100px) scale(2);opacity:0;}
+}
+
+#final{
+display:none;
+font-size:30px;
+line-height:1.6;
+animation:zoomIn 1s ease;
+}
+
+@keyframes zoomIn{
+from{opacity:0;transform:scale(0.6);}
+to{opacity:1;transform:scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="heart" onclick="start()">❤️</div>
+
+<div id="text"></div>
+
+<button id="nextBtn" onclick="finalPage()">One More Thing</button>
+
+<div id="final"></div>
+
+</div>
+
+<script>
+
+let message = `Senja ❤️
+
+I wanted to say this properly.
+
+I really loved you.
+Whatever I felt for you was real, not fake, not timepass.
+
+I never hated Muslims, and I never hated you.
+Please believe that.
+
+The problem was never religion itself.
+It was fear, pain, and old wounds inside my family because of their past experiences.
+
+Their mindset was not open, and I got stuck between what I felt for you and what I come from.
+
+Maybe I handled everything badly.
+Maybe I hurt you more than I understood at that time.
+
+For that... I am truly sorry.
+
+You were good to me.
+You deserved clarity, respect, and peace.
+
+No matter what happens now,
+I genuinely wish happiness, love, and success for you.
+
+And a part of me will always be thankful that I met you. ❤️`;
+
+let i = 0;
+
+function start(){
+document.getElementById("heart").style.display="none";
+document.getElementById("text").style.display="block";
+typeWriter();
+hearts();
+sparkLoop();
+}
+
+function typeWriter(){
+if(i < message.length){
+document.getElementById("text").innerHTML += message.charAt(i);
+i++;
+setTimeout(typeWriter,32);
+}else{
+document.getElementById("nextBtn").style.display="inline-block";
+}
+}
+
+function finalPage(){
+document.getElementById("text").style.display="none";
+document.getElementById("nextBtn").style.display="none";
+document.getElementById("final").style.display="block";
+document.getElementById("final").innerHTML =
+`❤️ I'm Sorry, Senja ❤️<br><br>
+If I embarrassed you, confused you, or hurt your heart... I am sorry.<br><br>
+You mattered to me more than I knew how to express.`;
+burst();
+}
+
+function hearts(){
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="float";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.top="100vh";
+h.style.fontSize=(18+Math.random()*26)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},350);
+}
+
+function burst(){
+for(let x=0;x<45;x++){
+let h=document.createElement("div");
+h.className="float";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.top=Math.random()*100+"vh";
+h.style.fontSize=(18+Math.random()*35)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+}
+
+function sparkLoop(){
+setInterval(()=>{
+let s=document.createElement("div");
+s.className="spark";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),2000);
+},220);
+}
+
+</script>
+
+</body>
+</html>
