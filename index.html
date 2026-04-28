@@ -111,24 +111,9 @@ pointer-events:none;
 100%{transform:translateY(-110vh) scale(1.5) rotate(360deg);opacity:0;}
 }
 
-.spark{
-position:absolute;
-width:6px;
-height:6px;
-border-radius:50%;
-background:white;
-animation:sparkle 2s linear forwards;
-pointer-events:none;
-}
-
-@keyframes sparkle{
-0%{transform:scale(0);opacity:1;}
-100%{transform:translateY(-100px) scale(2);opacity:0;}
-}
-
 #final{
 display:none;
-font-size:30px;
+font-size:28px;
 line-height:1.6;
 animation:zoomIn 1s ease;
 }
@@ -136,6 +121,31 @@ animation:zoomIn 1s ease;
 @keyframes zoomIn{
 from{opacity:0;transform:scale(0.6);}
 to{opacity:1;transform:scale(1);}
+}
+
+#cry{
+font-size:90px;
+margin-top:20px;
+animation:cryMove 1.5s infinite;
+}
+
+@keyframes cryMove{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+#sorryText{
+font-size:34px;
+margin-top:10px;
+color:#ff8fb3;
+animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0.5;}
+100%{opacity:1;}
 }
 
 </style>
@@ -170,7 +180,7 @@ Tolong percayalah.
 Masalahnya bukan tentang agama.
 Masalahnya adalah rasa takut, rasa sakit, dan luka lama dalam keluargaku karena masa lalu mereka.
 
-Pikiran keluarga ku tidak terlalu terbuka, dan aku terjebak di antara perasaanku padamu dan latar belakang keluargaku.
+Pikiran keluargaku tidak terlalu terbuka, dan aku terjebak di antara perasaanku padamu dan latar belakang keluargaku.
 
 Mungkin aku menangani semuanya dengan buruk.
 Mungkin aku menyakitimu lebih dari yang aku sadari saat itu.
@@ -192,7 +202,6 @@ document.getElementById("heart").style.display="none";
 document.getElementById("text").style.display="block";
 typeWriter();
 hearts();
-sparkLoop();
 }
 
 function typeWriter(){
@@ -209,10 +218,14 @@ function finalPage(){
 document.getElementById("text").style.display="none";
 document.getElementById("nextBtn").style.display="none";
 document.getElementById("final").style.display="block";
+
 document.getElementById("final").innerHTML =
 `❤️ Maaf, Senja ❤️<br><br>
 Jika aku membuatmu malu, bingung, atau menyakiti hatimu... aku minta maaf.<br><br>
-Kamu sangat berarti bagiku lebih dari yang bisa aku ungkapkan.`;
+Kamu sangat berarti bagiku lebih dari yang bisa aku ungkapkan.
+
+<div id="cry">😭</div>
+<div id="sorryText">SORRY...</div>`;
 burst();
 }
 
@@ -240,17 +253,6 @@ h.style.fontSize=(18+Math.random()*35)+"px";
 document.body.appendChild(h);
 setTimeout(()=>h.remove(),5000);
 }
-}
-
-function sparkLoop(){
-setInterval(()=>{
-let s=document.createElement("div");
-s.className="spark";
-s.style.left=Math.random()*100+"vw";
-s.style.top=Math.random()*100+"vh";
-document.body.appendChild(s);
-setTimeout(()=>s.remove(),2000);
-},220);
 }
 
 </script>
